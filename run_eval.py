@@ -1,5 +1,5 @@
 import json
-import sys 
+import sys
 import time
 
 from src.answerer import answer_question
@@ -11,16 +11,22 @@ from src.retriever import Retriever
 DOC = "data/readme.md"
 QUESTIONS = "eval/questions.json"
 K = 3
-PAUSE_SECONDS = 13
+PAUSE_SECONDS = 5
 
 questions = json.load(open(QUESTIONS, encoding="utf-8"))
+if len(sys.argv) > 1:
+    questions = questions[-int(sys.argv[1]):]
 chunks = chunk_document(load_document(DOC), size=120, overlap=30)
 retriever = Retriever(chunks)
 
 rows = []
 for item in questions:
     hits = retriever.search(item["question"], k=K)
-    answer = answer_question(item["question"], hits)["answer"] if hits else None
+    try:
+        answer = answer_question(item["question"], hits)["answer"] if hits else None
+    except Exception as e:
+        print("STOPPED:", e)
+        break
     if hits:
         time.sleep(PAUSE_SECONDS)
     answer = answer or "I don't know based on the provided documents."
@@ -34,7 +40,10 @@ for item in questions:
             "refused": is_refusal(answer),
         }
     )
-    print(("OK " if rows[-1]["correct"] or rows[-1]["refused"] else "MISS"), item["question"])
+    row = rows[-1]
+    status = "OK" if row["correct"] else ("REFUSED" if row["refused"] else "MISS")
+    print(status.ljust(8), item["question"])
+    if status == "MISS":
+        print("         answer:", answer[:200])
 
 print(json.dumps(summarize(rows), indent=2))
-sys.exit(0)

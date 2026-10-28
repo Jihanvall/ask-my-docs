@@ -6,7 +6,7 @@ from google.genai import types
 
 load_dotenv()
 
-MODEL = "gemini-2.5-flash"
+MODEL = "gemini-3.5-flash-lite"
 NO_ANSWER = "I don't know based on the provided documents."
 
 SYSTEM_PROMPT = """You answer questions using only the numbered excerpts provided.

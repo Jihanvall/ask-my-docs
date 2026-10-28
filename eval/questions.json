@@ -48,5 +48,37 @@
     "question": "Who won the football world cup in 1998?",
     "source": null,
     "keywords": []
+  },
+    
+  {
+    "question": "How big can an uploaded file be?",
+    "source": "readme.md",
+    "keywords": ["20"]
+  },
+  {
+    "question": "How do I run the web app on my machine?",
+    "source": "readme.md",
+    "keywords": ["uvicorn", "npm"]
+  },
+  {
+    "question": "Why is the language model not allowed to run code itself?",
+    "source": "readme.md",
+    "keywords": ["safe"]
+  },
+  {
+    "question": "What is the maximum number of columns the pipeline accepts?",
+    "source": null,
+    "keywords": []
+  },
+  {
+    "question": "Which database stores the trained models permanently?",
+    "source": null,
+    "keywords": []
+  },
+  {
+    "question": "How much does the Gemini API cost per request?",
+    "source": null,
+    "keywords": []
   }
+
 ]
