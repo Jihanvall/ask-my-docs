@@ -1,0 +1,52 @@
+[
+  {
+    "question": "What is the default maximum upload size?",
+    "source": "readme.md",
+    "keywords": ["20"]
+  },
+  {
+    "question": "Which environment variable controls the allowed CORS origins?",
+    "source": "readme.md",
+    "keywords": ["ALLOWED_ORIGINS"]
+  },
+  {
+    "question": "How long do sessions stay in memory by default?",
+    "source": "readme.md",
+    "keywords": ["3600"]
+  },
+  {
+    "question": "Which command starts the backend server?",
+    "source": "readme.md",
+    "keywords": ["uvicorn"]
+  },
+  {
+    "question": "What does the extract_date_features action do?",
+    "source": "readme.md",
+    "keywords": ["year", "month", "day"]
+  },
+  {
+    "question": "Which models are tried for classification?",
+    "source": "readme.md",
+    "keywords": ["Random Forest"]
+  },
+  {
+    "question": "What does the explain module do when the Gemini call fails?",
+    "source": "readme.md",
+    "keywords": ["without a summary"]
+  },
+  {
+    "question": "Which dataset was used to test the pipeline end to end?",
+    "source": "readme.md",
+    "keywords": ["Credit Card"]
+  },
+  {
+    "question": "What happens to uploaded files that are not CSV?",
+    "source": "readme.md",
+    "keywords": ["400"]
+  },
+  {
+    "question": "Who won the football world cup in 1998?",
+    "source": null,
+    "keywords": []
+  }
+]
